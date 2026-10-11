@@ -1,5 +1,6 @@
 import React, { lazy, StrictMode, Suspense, forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
+import { Analytics } from '@vercel/analytics/react';
 import ScrambleHover from '@/components/fancy/text/scramble-hover';
 import BreathingText from '@/components/fancy/text/breathing-text';
 import Typewriter from '@/components/fancy/text/typewriter';
@@ -861,6 +862,7 @@ function App() {
       </main>
       <Footer />
       <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+      <Analytics />
     </>
   );
 }
