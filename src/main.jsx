@@ -1,6 +1,7 @@
 import React, { lazy, StrictMode, Suspense, forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Analytics } from '@vercel/analytics/react';
+import { injectSpeedInsights } from '@vercel/speed-insights';
 import ScrambleHover from '@/components/fancy/text/scramble-hover';
 import BreathingText from '@/components/fancy/text/breathing-text';
 import Typewriter from '@/components/fancy/text/typewriter';
@@ -8,6 +9,8 @@ import MediaBetweenText from '@/components/fancy/blocks/media-between-text';
 import Gravity, { MatterBody } from "@/components/fancy/physics/gravity"
 import { I18nProvider, SUPPORTED_LANGUAGES, useI18n } from '@/i18n';
 import './styles.css';
+
+injectSpeedInsights();
 
 const AboutModel = lazy(() => import('@/components/about-model'));
 const DynastyModel = lazy(() => import('@/components/dynasty-model'));
